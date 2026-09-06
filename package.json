@@ -1,0 +1,9 @@
+{
+  "name": "offensive-security",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node -e \"console.log('Static site ready in dist/')\"",
+    "start": "python3 -m http.server 5173 --directory dist"
+  }
+}

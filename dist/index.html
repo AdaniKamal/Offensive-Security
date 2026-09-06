@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offensive Security</title>
+    <meta
+      name="description"
+      content="Interactive beginner guide for red team, penetration testing, vulnerability assessment, vulnerability management, methodology, pentest types, and tools."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar" aria-label="Site header">
+        <a class="brand" href="./" aria-label="Offensive Security home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 56 42" role="img">
+              <path d="M10 6h36a4 4 0 0 1 4 4v22H6V10a4 4 0 0 1 4-4Z" />
+              <path d="M2 33h52l-4 5H6l-4-5Z" />
+              <path d="M16 16h13M16 22h24" />
+            </svg>
+          </span>
+          <span>OFFENSIVE<span class="brand-dot">.</span></span>
+        </a>
+        <nav class="nav-links" aria-label="Page sections">
+          <a href="#concept-title">Scope</a>
+          <a href="#method-title">Methodology</a>
+          <a href="#method-title">Tools</a>
+        </nav>
+        <a class="top-action" href="#concept-title">Start learning</a>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <div class="live-map-bg" aria-hidden="true">
+          <span class="map-link link-one"></span>
+          <span class="map-link link-two"></span>
+          <div class="terminal-stream terminal-one">
+            <span class="terminal-line" style="--chars: 27; --delay: 0s">$ nmap -sV public-scope</span>
+            <span class="terminal-line" style="--chars: 26; --delay: 1.8s">$ wafw00f https://target</span>
+            <span class="terminal-line" style="--chars: 31; --delay: 3.6s">$ httpx -title -tech-detect</span>
+          </div>
+          <div class="terminal-stream terminal-two">
+            <span class="terminal-line" style="--chars: 28; --delay: 0.9s">$ subfinder -d example.com</span>
+            <span class="terminal-line" style="--chars: 24; --delay: 2.7s">$ nuclei -severity high</span>
+            <span class="terminal-line" style="--chars: 22; --delay: 4.5s">$ report impact + fix</span>
+          </div>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Public security learning spot</p>
+          <h1 id="page-title">Offensive Security</h1>
+          <p class="lede">
+            A polished reference for understanding offensive security scopes, testing methodology,
+            assessment types, and the tools commonly used during authorized security work.
+          </p>
+          <div class="hero-chips" aria-label="Guide highlights">
+            <span>Scope basics</span>
+            <span>Methodology</span>
+            <span>Tools by type</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="concepts" aria-labelledby="concept-title">
+        <div class="section-heading">
+          <p class="eyebrow">Start here</p>
+          <h2 id="concept-title">Know the scope</h2>
+        </div>
+
+        <div class="concept-grid" id="conceptGrid"></div>
+        <article class="detail-panel" id="conceptDetail" aria-live="polite"></article>
+      </section>
+
+      <section class="workspace" aria-labelledby="method-title">
+        <div class="section-heading">
+          <p class="eyebrow">Methodology</p>
+          <h2 id="method-title">Pick a step, then pick a pentest type</h2>
+        </div>
+
+        <div class="method-layout">
+          <nav class="method-list" id="methodList" aria-label="Penetration testing methodology steps"></nav>
+
+          <section class="tool-workbench" aria-labelledby="tool-title">
+            <div class="type-tabs" id="typeTabs" role="tablist" aria-label="Pentest type"></div>
+
+            <div class="selected-context">
+              <div>
+                <p class="eyebrow" id="selectedStepLabel"></p>
+                <h3 id="tool-title"></h3>
+              </div>
+              <p id="selectedTypeDesc"></p>
+            </div>
+
+            <div class="tools-grid" id="toolsGrid"></div>
+          </section>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <span>© Adani Kamal</span>
+      </footer>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
