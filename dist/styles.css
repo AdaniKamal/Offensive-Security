@@ -481,8 +481,21 @@ h3 {
   bottom: 14px;
   left: 76px;
   height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(63, 115, 234, 0.12);
+}
+
+.concept-card.active::before {
+  content: "";
+  position: absolute;
+  right: 22px;
+  bottom: 14px;
+  left: 76px;
+  height: 3px;
   border-radius: 999px;
   background: linear-gradient(90deg, #3f73ea, rgba(63, 115, 234, 0));
+  animation: conceptProgress 5.2s linear infinite;
 }
 
 .concept-number {
@@ -522,6 +535,20 @@ h3 {
     linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(246, 249, 255, 0.86));
   padding: clamp(26px, 4vw, 54px);
   box-shadow: 0 26px 70px rgba(32, 32, 29, 0.11);
+}
+
+.detail-panel {
+  transform: translateY(0) scale(1);
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+.detail-panel:hover {
+  border-color: rgba(63, 115, 234, 0.22);
+  box-shadow: 0 34px 90px rgba(32, 32, 29, 0.16);
+  transform: translateY(-10px) scale(1.012);
 }
 
 .detail-number {
@@ -809,6 +836,18 @@ h3 {
   }
 }
 
+@keyframes conceptProgress {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+
+  100% {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -900,7 +939,7 @@ h3 {
 
   .concepts {
     padding: 58px 0;
-    }
+  }
 
   .concepts .section-heading,
   .concepts .concept-showcase {

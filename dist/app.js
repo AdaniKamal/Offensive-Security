@@ -185,6 +185,22 @@ const toolTitle = document.querySelector("#tool-title");
 const selectedTypeDesc = document.querySelector("#selectedTypeDesc");
 const toolsGrid = document.querySelector("#toolsGrid");
 
+let conceptTimer;
+const conceptCycleMs = 5200;
+
+function moveToNextConcept() {
+  const currentIndex = concepts.findIndex((item) => item.id === selectedConcept);
+  const nextIndex = (currentIndex + 1) % concepts.length;
+
+  selectedConcept = concepts[nextIndex].id;
+  renderConcepts();
+}
+
+function restartConceptCycle() {
+  window.clearInterval(conceptTimer);
+  conceptTimer = window.setInterval(moveToNextConcept, conceptCycleMs);
+}
+
 function renderConcepts() {
   conceptGrid.innerHTML = concepts
     .map(
@@ -280,6 +296,7 @@ document.addEventListener("click", (event) => {
   if (conceptButton) {
     selectedConcept = conceptButton.dataset.concept;
     renderConcepts();
+    restartConceptCycle();
   }
 
   if (methodButton) {
@@ -296,3 +313,4 @@ document.addEventListener("click", (event) => {
 });
 
 renderAll();
+restartConceptCycle();
