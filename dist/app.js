@@ -83,9 +83,14 @@ const pentestTypes = [
 const toolData = {
   recon: {
     web: [
-      tool("Amass", "Maps domains, subdomains, ASN data, and external attack surface.", "Use early when you need a broader picture of owned assets.", "https://github.com/owasp-amass/amass"),
+      tool("Amass", "Maps domains, subdomains, ASN data, certificates, and external attack surface.", "Use early when you need a wider view of owned public assets.", "https://github.com/owasp-amass/amass"),
       tool("Subfinder", "Finds valid subdomains from passive sources.", "Use before probing which hosts are alive.", "https://github.com/projectdiscovery/subfinder"),
-      tool("Wappalyzer", "Identifies web technologies, frameworks, and analytics tags.", "Use when you need quick technology fingerprinting.", "https://www.wappalyzer.com/")
+      tool("httpx", "Probes discovered hosts and collects status code, title, technologies, redirect, and TLS details.", "Use after subdomain discovery to identify live web targets.", "https://github.com/projectdiscovery/httpx"),
+      tool("Wafw00f", "Detects whether a web application firewall may be protecting the target.", "Use before deeper testing so you understand filtering and blocking behavior.", "https://github.com/EnableSecurity/wafw00f"),
+      tool("Wappalyzer", "Identifies web technologies, frameworks, CMS, analytics tags, and JavaScript libraries.", "Use when you need quick technology fingerprinting.", "https://www.wappalyzer.com/"),
+      tool("dnsx", "Performs fast DNS resolution and DNS record checks.", "Use to validate discovered subdomains and inspect DNS exposure.", "https://github.com/projectdiscovery/dnsx"),
+      tool("Katana", "Crawls web applications to discover URLs, parameters, forms, and JavaScript-linked paths.", "Use after finding live web hosts to map reachable application surface.", "https://github.com/projectdiscovery/katana"),
+      tool("Waybackurls", "Pulls historical URLs from the Wayback Machine.", "Use to find old endpoints, archived paths, and forgotten application routes.", "https://github.com/tomnomnom/waybackurls")
     ],
     network: [
       tool("WHOIS", "Shows domain registration and ownership metadata.", "Use for external scoping and ownership clues.", "https://www.whois.com/whois/"),
