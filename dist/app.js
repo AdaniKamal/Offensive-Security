@@ -188,17 +188,24 @@ const toolsGrid = document.querySelector("#toolsGrid");
 function renderConcepts() {
   conceptGrid.innerHTML = concepts
     .map(
-      (concept) => `
+      (concept, index) => `
         <button class="concept-card ${concept.id === selectedConcept ? "active" : ""}" data-concept="${concept.id}">
-          <strong>${concept.title}</strong>
-          <span>${concept.short}</span>
+          <span class="concept-number">${String(index + 1).padStart(2, "0")}</span>
+          <span class="concept-card-copy">
+            <strong>${concept.title}</strong>
+            <span>${concept.short}</span>
+          </span>
         </button>
       `
     )
     .join("");
 
   const concept = concepts.find((item) => item.id === selectedConcept);
+  const conceptIndex = concepts.findIndex((item) => item.id === selectedConcept) + 1;
+
   conceptDetail.innerHTML = `
+    <span class="detail-number">${String(conceptIndex).padStart(2, "0")}</span>
+    <p class="detail-kicker">Selected scope</p>
     <h3>${concept.title}</h3>
     <p>${concept.detail}</p>
   `;
