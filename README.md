@@ -39,32 +39,15 @@ A public learning spot for offensive security concepts, penetration testing meth
 ## Project Structure
 
 ```text
-dist/
-  index.html
-  styles.css
-  app.js
-package.json
-vercel.json
-README.md
+.
+├── dist/
+│   ├── index.html
+│   ├── styles.css
+│   └── app.js
+├── package.json
+├── vercel.json
+└── README.md
 ```
-
-## Run Locally
-
-```bash
-npm install
-npm start
-```
-
-The site will serve the `dist` folder.
-
-## Deploy To Vercel
-
-1. Push this project to GitHub.
-2. Import the GitHub repository into Vercel.
-3. Vercel should detect:
-   - Build command: `npm run build`
-   - Output directory: `dist`
-4. Deploy.
 
 ## Notes
 
