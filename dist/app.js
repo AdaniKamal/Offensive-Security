@@ -221,7 +221,7 @@ function renderConcepts() {
 
   conceptDetail.innerHTML = `
     <span class="detail-number">${String(conceptIndex).padStart(2, "0")}</span>
-    <p class="detail-kicker">Selected scope</p>
+    <p class="detail-kicker">Scope</p>
     <h3>${concept.title}</h3>
     <p>${concept.detail}</p>
   `;
