@@ -36,6 +36,7 @@ A public learning spot for offensive security concepts, penetration testing meth
 | v14 | Redesigned the Know the scope section into a clearer reference-style layout with numbered options and a larger explanation card. |
 | v15 | Updated this README with a proper version history of the project changes. |
 | v16 | Changed the Methodology area into a separate full-width section with a different background so it is easier to distinguish from Know the scope. |
+| v17 | Added auto-cycling scope cards, animated progress bar, and hover movement for the selected scope detail card. |
 
 ## Project Structure
 
